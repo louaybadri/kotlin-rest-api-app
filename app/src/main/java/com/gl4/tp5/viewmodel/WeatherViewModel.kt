@@ -49,18 +49,21 @@ class WeatherViewModel() : ViewModel() {
                     weatherData.value = weather
                 } else {
                     println("response is not successful")
+                    println(response.errorBody())
                 }
             }
 
             override fun onFailure(call: retrofit2.Call<WeatherApiResponse>, t: Throwable) {
                 println("response is not successful")
+
+                println(t.message.toString())
             }
         })
 
     }
 
-    fun loadData(location: String) {
-        var data = weatherRepo.getWeather(location)
+    fun loadData(location: String,appId: String) {
+        var data = weatherRepo.getWeather(location,appId)
         data.enqueue(object : retrofit2.Callback<WeatherApiResponse> {
             override fun onResponse(
                 call: retrofit2.Call<WeatherApiResponse>,
@@ -77,11 +80,14 @@ class WeatherViewModel() : ViewModel() {
                     weatherData.value = weather
                 } else {
                     println("response is not successful")
+                    println(response.errorBody())
                 }
             }
 
             override fun onFailure(call: retrofit2.Call<WeatherApiResponse>, t: Throwable) {
                 println("response is not successful")
+
+                println(t.message.toString())
             }
         })
 

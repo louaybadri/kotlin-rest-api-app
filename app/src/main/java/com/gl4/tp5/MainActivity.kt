@@ -19,34 +19,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-//        lateinit var weather: WeatherApiResponse
-//        //calling the api
-//        val call = RetrofitHelper.retrofitService.getWeatherTN()
-//        //executing the call
-//        call.enqueue(object : retrofit2.Callback<WeatherApiResponse> {
-//            override fun onResponse(
-//                call: retrofit2.Call<WeatherApiResponse>,
-//                response: retrofit2.Response<WeatherApiResponse>
-//            ) {
-//                if (response.isSuccessful) {
-//                    println("response is successful")
-//                    weather = response.body()!!
-//                    binding.temperature.text = "temp : "+ weather.main.temp.toString()
-//                        binding.description.text = "desc: "+ weather.weather[0].description
-//                    binding.humidity.text ="humidity: "+  weather.main.humidity.toString()
-//                    binding.pressure.text ="pressure : "+  weather.main.pressure.toString()
-//
-//                }else{
-//                    println("response is not successful")
-//                    binding.textView.text = response.code().toString()
-//
-//                }
-//            }
-//
-//            override fun onFailure(call: retrofit2.Call<WeatherApiResponse>, t: Throwable) {
-//                binding.textView.text = t.message
-//            }
-//        })
 
         val weatherObserver = Observer<WeatherApiResponse> { weather ->
             binding.temperature.text = "temp : "+ weather.main.temp.toString()
@@ -58,6 +30,9 @@ class MainActivity : AppCompatActivity() {
 
         binding.button.setOnClickListener {
             model.loadDataTN()
+        }
+        binding.button2.setOnClickListener {
+            model.loadData("london","17db59488cadcad345211c36304a9266")
         }
     }
 }

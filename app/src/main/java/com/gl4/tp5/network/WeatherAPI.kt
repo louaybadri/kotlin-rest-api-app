@@ -12,6 +12,7 @@ interface WeatherAPI {
     @GET("weather?q=Tunis&APPID=17db59488cadcad345211c36304a9266")
     fun getWeatherTN(): Call<WeatherApiResponse>
 
-    @GET("weather?APPID=17db59488cadcad345211c36304a9266")
-    fun getWeather(@Query("q") q:String): Call<WeatherApiResponse>
+    @GET("weather")
+    fun getWeather(@Query("q") q: String, @Query("APPID") appId: String): Call<WeatherApiResponse>
+
 }
