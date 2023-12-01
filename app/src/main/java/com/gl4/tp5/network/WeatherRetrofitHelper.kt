@@ -2,7 +2,7 @@ import com.gl4.tp5.network.WeatherAPI
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-object RetrofitHelper {
+object WeatherRetrofitHelper {
 
     private const val baseUrl ="https://api.openweathermap.org/data/2.5/"
     /**

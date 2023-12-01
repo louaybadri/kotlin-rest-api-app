@@ -3,29 +3,17 @@ package com.gl4.tp5.viewmodel
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.gl4.tp5.model.WeatherApiResponse
+import com.gl4.tp5.model.WeatherData
 import com.gl4.tp5.repository.WeatherRepo
-
-class WeatherData {
-    var temp: Double = 0.0
-    var description: String = ""
-    var humidity: Int = 0
-    var pressure: Int = 0
-//
-//    constructor(temp: Double, description: String, humidity: Int, pressure: Int) {
-//        this.temp = temp
-//        this.description = description
-//        this.humidity = humidity
-//        this.pressure = pressure
-//    }
-}
+import java.sql.Date
 
 
-class WeatherViewModel() : ViewModel() {
+class WeatherViewModel( private val weatherRepo: WeatherRepo = WeatherRepo()
+) : ViewModel() {
 
 
-    private val weatherRepo: WeatherRepo = WeatherRepo()
-    val weatherData: MutableLiveData<WeatherApiResponse> by lazy {
-        MutableLiveData<WeatherApiResponse>()
+   val weatherData: MutableLiveData<WeatherData> by lazy {
+        MutableLiveData<WeatherData>()
     }
 
 
@@ -42,11 +30,13 @@ class WeatherViewModel() : ViewModel() {
                     println("response is successful")
                     var weather = response.body()!!
                     var _data = WeatherData()
+                    _data.date = Date(weather.dt.toLong()*1000).toString()
+                    _data.image=weather.weather[0].icon
                     _data.humidity = weather.main.humidity
                     _data.pressure = weather.main.pressure
                     _data.description = weather.weather[0].description
                     _data.temp = weather.main.temp
-                    weatherData.value = weather
+                    weatherData.value = _data
                 } else {
                     println("response is not successful")
                     println(response.errorBody())
@@ -73,11 +63,14 @@ class WeatherViewModel() : ViewModel() {
                     println("response is successful")
                     var weather = response.body()!!
                     var _data = WeatherData()
+
+                    _data.date = Date(weather.dt.toLong()*1000).toString()
+                    _data.image=weather.weather[0].icon
                     _data.humidity = weather.main.humidity
                     _data.pressure = weather.main.pressure
                     _data.description = weather.weather[0].description
                     _data.temp = weather.main.temp
-                    weatherData.value = weather
+                    weatherData.value = _data
                 } else {
                     println("response is not successful")
                     println(response.errorBody())

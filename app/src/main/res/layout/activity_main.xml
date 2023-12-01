@@ -18,61 +18,128 @@
         app:layout_constraintVertical_bias="0.133" />
 
     <LinearLayout
-        android:layout_width="394dp"
-        android:layout_height="46dp"
-        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         tools:layout_editor_absoluteY="137dp">
 
-        <Button
-            android:id="@+id/button2"
+        <Spinner
+            android:id="@+id/spinner"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Load Data london" />
+            android:layout_centerInParent="true"/>
 
-        <Button
-            android:id="@+id/button"
+
+        <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Load DATA TN"  />
+            android:layout_height="match_parent"
+            android:gravity="center"
+            >
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Load DATA TN"  />
+
+
+            <Button
+                android:id="@+id/detailsButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="See More Data"  />
+        </LinearLayout>
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/data_layout"
         android:layout_width="412dp"
+        android:gravity="center_horizontal"
         android:layout_height="425dp"
         android:orientation="vertical"
+        android:padding="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="DATE"
+            style="@style/TitleTextStyle" />
+
+        <TextView
+            android:id="@+id/date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="" />
+        <TextView
+            android:id="@+id/temperatureT"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Temperature"
+            style="@style/TitleTextStyle"/>
 
         <TextView
             android:id="@+id/temperature"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="TextView" />
+            android:text="" />
+
+        <TextView
+            android:id="@+id/descriptionT"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Description"
+            style="@style/TitleTextStyle"/>
 
         <TextView
             android:id="@+id/description"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="TextView" />
+            android:text=""
+            />
+
+
+        <TextView
+            android:id="@+id/humidityT"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Humidity"
+            style="@style/TitleTextStyle"/>
 
         <TextView
             android:id="@+id/humidity"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="TextView" />
+            android:text="" />
 
         <TextView
-            android:id="@+id/pressure"
-            android:layout_width="match_parent"
+            android:id="@+id/pressureT"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="TextView" />
+            android:text="Pressure"
+            style="@style/TitleTextStyle"/>
+        <TextView
+            android:id="@+id/pressure"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="" />
 
     </LinearLayout>
+
+    <ImageView
+        android:elevation="8dp"
+        android:id="@+id/mImage"
+        android:layout_width="112dp"
+        android:layout_height="130dp"
+        app:layout_constraintBottom_toTopOf="@+id/data_layout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

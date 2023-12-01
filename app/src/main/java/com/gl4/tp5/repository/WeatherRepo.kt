@@ -6,13 +6,13 @@ import retrofit2.Call
 
 class WeatherRepo : WeatherAPI {
     override fun getWeatherTN(): Call<WeatherApiResponse> {
-        val response =  RetrofitHelper.retrofitService.getWeatherTN()
+        val response =  WeatherRetrofitHelper.retrofitService.getWeatherTN()
         println(response.request().url())
         return response
     }
     override fun getWeather(location:String,appId:String): Call<WeatherApiResponse> {
 
-        val response =  RetrofitHelper.retrofitService.getWeather(location,appId)
+        val response =  WeatherRetrofitHelper.retrofitService.getWeather(location,appId)
         println(response.request().url())
         return response
     }
