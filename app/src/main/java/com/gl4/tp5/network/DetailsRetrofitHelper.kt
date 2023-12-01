@@ -11,8 +11,6 @@ object DetailsRetrofitHelper {
      */
     private val retrofit = Retrofit.Builder().baseUrl(baseUrl)
         .addConverterFactory(GsonConverterFactory.create())
-        // we need to add converter factory to
-        // convert JSON object to Java object
         .build()
     /**
      * A public Api object that exposes the lazy-initialized Retrofit service

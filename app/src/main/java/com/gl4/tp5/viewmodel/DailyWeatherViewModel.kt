@@ -2,8 +2,8 @@ package com.gl4.tp5.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.gl4.tp5.model.DailyWeatherApiResponse
-import com.gl4.tp5.model.WeatherData
+import com.gl4.tp5.classes.DailyWeatherApiResponse
+import com.gl4.tp5.classes.WeatherData
 import com.gl4.tp5.repository.DetailsRepo
 import java.sql.Date
 

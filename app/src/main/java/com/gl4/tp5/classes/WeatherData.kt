@@ -1,4 +1,4 @@
-package com.gl4.tp5.model
+package com.gl4.tp5.classes
 class WeatherData {
     var date: String = ""
     var image: String = ""

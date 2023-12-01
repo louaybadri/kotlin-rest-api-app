@@ -1,10 +1,8 @@
-package com.gl4.tp5.model
+package com.gl4.tp5.classes
 
-data class Temp(
+data class FeelsLike(
     val day: Double,
     val eve: Double,
-    val max: Double,
-    val min: Double,
     val morn: Double,
     val night: Double
 )

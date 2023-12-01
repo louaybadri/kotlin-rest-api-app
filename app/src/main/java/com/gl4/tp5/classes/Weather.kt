@@ -1,4 +1,4 @@
-package com.gl4.tp5.model
+package com.gl4.tp5.classes
 
 data class Weather(
     val description: String,

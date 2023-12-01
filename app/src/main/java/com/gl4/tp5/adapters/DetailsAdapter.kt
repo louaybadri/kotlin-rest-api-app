@@ -1,4 +1,4 @@
-package com.gl4.tp5
+package com.gl4.tp5.adapters
 
 import android.graphics.drawable.Drawable
 import android.view.LayoutInflater
@@ -7,8 +7,9 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.gl4.tp5.R
 import com.gl4.tp5.databinding.ItemBinding
-import com.gl4.tp5.model.WeatherData
+import com.gl4.tp5.classes.WeatherData
 import java.io.IOException
 
 class DetailsAdapter(private val weatherData: Array<WeatherData>): RecyclerView.Adapter<DetailsAdapter.DetailsViewHolder>() {

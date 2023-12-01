@@ -5,8 +5,9 @@ import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.gl4.tp5.adapters.DetailsAdapter
 import com.gl4.tp5.databinding.DetailsBinding
-import com.gl4.tp5.model.WeatherData
+import com.gl4.tp5.classes.WeatherData
 import com.gl4.tp5.viewmodel.DailyWeatherViewModel
 
 class DetailsActivity : AppCompatActivity() {

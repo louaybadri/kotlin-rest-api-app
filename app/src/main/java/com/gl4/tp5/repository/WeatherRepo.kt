@@ -1,6 +1,6 @@
 package com.gl4.tp5.repository
 
-import com.gl4.tp5.model.WeatherApiResponse
+import com.gl4.tp5.classes.WeatherApiResponse
 import com.gl4.tp5.network.WeatherAPI
 import retrofit2.Call
 

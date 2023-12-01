@@ -11,7 +11,7 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import com.gl4.tp5.databinding.ActivityMainBinding
-import com.gl4.tp5.model.WeatherData
+import com.gl4.tp5.classes.WeatherData
 import com.gl4.tp5.viewmodel.WeatherViewModel
 import java.io.IOException
 
